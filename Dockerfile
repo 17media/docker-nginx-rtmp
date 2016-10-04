@@ -166,8 +166,9 @@ RUN         apk --no-cache add ffmpeg
 
 COPY        /conf/.foreman /.foreman
 COPY        /conf/Procfile /Procfile
+
 COPY        /conf/nginx.conf /etc/nginx/nginx.conf
-COPY        /conf/nginx.vh.default.conf /etc/nginx/conf.d/default.conf
+
 COPY        gcsfuse.sh /usr/bin/gcsfuse.sh
 
 RUN         chmod +x /usr/bin/gcsfuse.sh
@@ -176,6 +177,6 @@ RUN         adduser $GCSFUSE_USER -D -H && \
                 chown $GCSFUSE_USER $GCSFUSE_MOUNTPOINT
 WORKDIR     /
 
-EXPOSE      80/tcp 443/tcp 1935/tcp
+EXPOSE      1935/tcp
 
 CMD         ["foreman", "start"]
