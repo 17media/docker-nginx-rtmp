@@ -1,0 +1,3 @@
+procfile: Procfile
+formation: nginx=1, gcsfuse=1
+timeout: 1
