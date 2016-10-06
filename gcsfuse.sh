@@ -67,4 +67,4 @@ fi
 #    --implicit-dirs		Implicitly define directories based on content. Seedocs/semantics.md
 #    --only-dir 			Mount only the given directory, relative to the bucket root.
 
-gcsfuse $GCSFUSE_FLAGS $GCSFUSE_BUCKETNAME $GCSFUSE_MOUNTPOINT
+gcsfuse $GCSFUSE_FLAGS $GCSFUSE_BUCKETNAME $FUSE_MOUNTPOINT
