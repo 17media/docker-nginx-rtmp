@@ -1,2 +1,2 @@
-openresty: /usr/local/openresty/bin/openresty -g "daemon off;" -c /nginx.conf
+openresty: /usr/local/openresty/bin/openresty -g "daemon off;" -c /etc/nginx/nginx.conf
 gcsfuse: /usr/bin/gcsfuse.sh

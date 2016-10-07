@@ -128,9 +128,9 @@ RUN             apk add --no-cache --virtual .build-deps \
 
 RUN             apk --no-cache add ffmpeg
 
-COPY            /conf/.foreman /.foreman
-COPY            /conf/Procfile /Procfile
-COPY            /conf/nginx.conf /nginx.conf
+COPY            /conf/.foreman /usr/src/app/.foreman
+COPY            /conf/Procfile /usr/src/app/Procfile
+COPY            /conf/nginx.conf /etc/nginx/nginx.conf
 
 COPY            gcsfuse.sh /usr/bin/gcsfuse.sh
 RUN             chmod +x /usr/bin/gcsfuse.sh
@@ -140,7 +140,7 @@ RUN             mkdir -p /data/nginx/cache
 RUN             adduser $FUSE_USER -D -H && \
                     mkdir -p $FUSE_MOUNTPOINT && \
                     chown $FUSE_USER $FUSE_MOUNTPOINT
-WORKDIR         /
+WORKDIR         /usr/src/app
 
 EXPOSE          1935/tcp 80/tcp
 
