@@ -130,8 +130,7 @@ RUN             apk --no-cache add ffmpeg
 
 COPY            /conf/.foreman /.foreman
 COPY            /conf/Procfile /Procfile
-
-# COPY            /conf/nginx.conf /nginx.conf
+COPY            /conf/nginx.conf /nginx.conf
 
 COPY            gcsfuse.sh /usr/bin/gcsfuse.sh
 RUN             chmod +x /usr/bin/gcsfuse.sh
